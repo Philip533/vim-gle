@@ -22,11 +22,6 @@ syntax keyword gleKeyword set
 highlight link gleKeyword Keyword
 "}}}
 
-" Subroutines{{{
-syntax keyword gleFunction sub
-highlight link gleFunction Function
-"}}}
-
 " Commands {{{
 syntax match gleCommand "\v[ar]?line"
 syntax match gleCommand "\v[ar]move"
@@ -99,8 +94,8 @@ highlight link gleSubcommands Identifier
 syntax keyword gleObject box
 syntax keyword gleObject clip
 syntax keyword gleObject origin
-syntax keyword gleObject graph
 syntax keyword gleObject path
+syntax keyword gleObject marker
 syntax keyword gleObject rotate
 syntax keyword gleObject scale
 syntax keyword gleObject table
@@ -112,15 +107,66 @@ highlight link gleObject String
 
 
 "}}}
+
+" Switches{{{
+syntax keyword gleSwitch butt
+syntax keyword gleSwitch round
+syntax keyword gleSwitch square
+syntax keyword gleSwitch mitre
+syntax keyword gleSwitch bevel
+syntax keyword gleSwitch left
+syntax keyword gleSwitch center
+syntax keyword gleSwitch right
+syntax match   gleSwitch "\v[tcblr]{2,2}"
+syntax match   gleSwitch "\v[xy]g"
+syntax match   gleSwitch "\v[xy]end"
+syntax match   gleSwitch "\v[xy]pos"
+syntax keyword gleSwitch on
+syntax keyword gleSwitch off
+syntax keyword gleSwitch grid
+syntax keyword gleSwitch log
+syntax keyword gleSwitch nofirst
+syntax keyword gleSwitch nolast
+highlight link gleSwitch Boolean
+
+
+
+"}}}
+
+" Mathematical functions{{{
+syntax keyword gleFunction abs
+syntax keyword gleFunction cos
+syntax keyword gleFunction sin
+syntax keyword gleFunction tan
+syntax keyword gleFunction exp
+syntax keyword gleFunction fix
+syntax keyword gleFunction int
+syntax keyword gleFunction log
+syntax keyword gleFunction log10
+syntax keyword gleFunction sgn
+syntax keyword gleFunction todeg
+syntax keyword gleFunction torad
+syntax keyword gleFunction not
+syntax keyword gleFunction rnd
+syntax match gleFunction "\vsqrt?"
+syntax match gleFunction "\va?cosh?"
+syntax match gleFunction "\va?coth?"
+syntax match gleFunction "\va?csch?"
+syntax match gleFunction "\va?sech?"
+syntax match gleFunction "\va?sinh?"
+syntax match gleFunction "\va?tanh?"
+syntax keyword gleFunction sub
+
+highlight link gleFunction Function
+
+
+" }}}
+
+" Match numbers, strings, and comments
 syntax match gleNumber "\v<\-?\d+(\.\d+)?(e\-?\d+)?>"
-
 highlight link gleNumber Identifier 
-
-
 syntax match gleString "\v(['"]).{-}[^\\]\1"
-
 highlight link gleString String 
-
 syntax match gleComment "\v!.*$"
 highlight link gleComment Comment 
 
