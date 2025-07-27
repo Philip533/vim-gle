@@ -117,7 +117,6 @@ syntax keyword gleSwitch bevel
 syntax keyword gleSwitch left
 syntax keyword gleSwitch center
 syntax keyword gleSwitch right
-syntax match   gleSwitch "\v[tcblr]{2,2}"
 syntax match   gleSwitch "\v[xy]g"
 syntax match   gleSwitch "\v[xy]end"
 syntax match   gleSwitch "\v[xy]pos"
