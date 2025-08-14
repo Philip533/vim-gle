@@ -74,13 +74,13 @@ syntax keyword gleSubcommands lwidth
 syntax keyword gleSubcommands from
 syntax keyword gleSubcommands dist
 syntax keyword gleSubcommands key
-syntax match gleSubcommands "\v[xy]min"
-syntax match gleSubcommands "\v[xy]max"
+syntax match gleSubcommands "\v[xy]min "
+syntax match gleSubcommands "\v[xy]max "
 syntax keyword gleSubcommands nomiss
-syntax match gleSubcommands "\vsmoothm?"
+syntax match gleSubcommands "\vsmoothm? "
 syntax keyword gleSubcommands dsubticks
 syntax keyword gleSubcommands dpoints
-syntax match gleSubcommands "\v[nd]ticks"
+syntax match gleSubcommands "\v[nd]ticks "
 syntax keyword gleSubcommands shift
 syntax keyword gleSubcommands offset
 syntax keyword gleSubcommands position
@@ -147,13 +147,20 @@ syntax keyword gleFunction todeg
 syntax keyword gleFunction torad
 syntax keyword gleFunction not
 syntax keyword gleFunction rnd
-syntax match gleFunction "\vsqrt?"
-syntax match gleFunction "\va?cosh?"
-syntax match gleFunction "\va?coth?"
-syntax match gleFunction "\va?csch?"
-syntax match gleFunction "\va?sech?"
-syntax match gleFunction "\va?sinh?"
-syntax match gleFunction "\va?tanh?"
+syntax keyword gleFunction sqrt
+syntax keyword gleFunction sqr
+syntax keyword gleFunction cos
+syntax keyword gleFunction cosh
+syntax keyword gleFunction cot
+syntax keyword gleFunction coth
+syntax keyword gleFunction csc
+syntax keyword gleFunction csch
+syntax keyword gleFunction sec
+syntax keyword gleFunction sech
+syntax keyword gleFunction sin
+syntax keyword gleFunction sinh
+syntax keyword gleFunction tan
+syntax keyword gleFunction tanh
 syntax keyword gleFunction sub
 
 highlight link gleFunction Function
