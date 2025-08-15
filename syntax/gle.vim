@@ -19,12 +19,14 @@ syntax keyword gleKeyword data
 syntax keyword gleKeyword fullsize
 syntax keyword gleKeyword let
 syntax keyword gleKeyword set
+syntax keyword gleKeyword size
 highlight link gleKeyword Keyword
 "}}}
 
 " Commands {{{
-syntax match gleCommand "\v[ar]?line"
-syntax match gleCommand "\v[ar]move"
+" \v<word> matches using word boundaries. Neat!
+syntax match gleCommand "\v<[ar]?line>"
+syntax match gleCommand "\v<[ar]move>"
 syntax keyword gleCommand arc
 syntax keyword gleCommand arcto
 syntax keyword gleCommand bezier
@@ -39,22 +41,22 @@ syntax keyword gleCommand reverse
 syntax keyword gleCommand save
 syntax keyword gleCommand write
 syntax keyword gleCommand title
-syntax match gleCommand "\v[xy]2?axis"
-syntax match gleCommand "\v[hv]scale"
-syntax match gleCommand "\v[xy]2?labels"
-syntax match gleCommand "\v[xy]2?names"
-syntax match gleCommand "\v[xy]2?side"
-syntax match gleCommand "\v[xy]2?subtick"
-syntax match gleCommand "\v[xy]2?title"
+syntax match gleCommand "\v<[xy]2?axis>"
+syntax match gleCommand "\v<[hv]scale>"
+syntax match gleCommand "\v<[xy]2?labels>"
+syntax match gleCommand "\v<[xy]2?names>"
+syntax match gleCommand "\v<[xy]2?side>"
+syntax match gleCommand "\v<[xy]2?subticks>"
+syntax match gleCommand "\v<[xy]2?title>"
 highlight link gleCommand Constant
 " }}}
 
 "Subcommands{{{
 syntax keyword gleSubcommands width
-syntax match gleSubcommands "\vh?err"
-syntax match gleSubcommands "\vh?errwidth"
-syntax match gleSubcommands "\vh?errup"
-syntax match gleSubcommands "\vh?errdown"
+syntax match gleSubcommands "\v<h?err>"
+syntax match gleSubcommands "\v<h?errwidth>"
+syntax match gleSubcommands "\v<h?errup>"
+syntax match gleSubcommands "\v<h?errdown>"
 syntax keyword gleSubcommands hei
 syntax keyword gleSubcommands color
 syntax keyword gleSubcommands dashlen
@@ -117,9 +119,9 @@ syntax keyword gleSwitch bevel
 syntax keyword gleSwitch left
 syntax keyword gleSwitch center
 syntax keyword gleSwitch right
-syntax match   gleSwitch "\v[xy]g"
-syntax match   gleSwitch "\v[xy]end"
-syntax match   gleSwitch "\v[xy]pos"
+syntax match   gleSwitch "\v<[xy]g>"
+syntax match   gleSwitch "\v<[xy]end>"
+syntax match   gleSwitch "\v<[xy]pos>"
 syntax keyword gleSwitch on
 syntax keyword gleSwitch off
 syntax keyword gleSwitch grid
@@ -147,25 +149,23 @@ syntax keyword gleFunction todeg
 syntax keyword gleFunction torad
 syntax keyword gleFunction not
 syntax keyword gleFunction rnd
-syntax keyword gleFunction sqrt
-syntax keyword gleFunction sqr
-syntax keyword gleFunction cos
-syntax keyword gleFunction cosh
-syntax keyword gleFunction cot
-syntax keyword gleFunction coth
-syntax keyword gleFunction csc
-syntax keyword gleFunction csch
-syntax keyword gleFunction sec
-syntax keyword gleFunction sech
-syntax keyword gleFunction sin
-syntax keyword gleFunction sinh
-syntax keyword gleFunction tan
-syntax keyword gleFunction tanh
-syntax keyword gleFunction sub
-
+syntax match gleFunction "\v<sqrt?>"
+syntax match gleFunction "\v<a?cosh>?"
+syntax match gleFunction "\v<a?coth?>"
+syntax match gleFunction "\v<a?csch?>"
+syntax match gleFunction "\v<a?sech?>"
+syntax match gleFunction "\v<a?sinh?>"
+syntax match gleFunction "\v<a?tanh?>"
 highlight link gleFunction Function
 
 
+" }}}
+
+" Libraries {{{
+syntax keyword gleLibraries openline
+syntax keyword gleLibraries moreland
+
+highlight link gleLibraries Special
 " }}}
 
 " Match numbers, strings, and comments
